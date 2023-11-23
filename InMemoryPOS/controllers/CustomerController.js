@@ -1,4 +1,3 @@
-var Customers =[];
 
 var customerFormVar =document.querySelector("#customerForm");
 var itemFormVar =document.querySelector("#itemForm");
@@ -44,16 +43,15 @@ var $cSalaryText = $("#cSalaryText");
 
 
 $("#cSavebtn").click(() => {
-    const customer = {
-        id: $cIdTxt.val(),
-        name: $cNameTxt.val(),
-        address: $cAddressTxt.val(),
-        salary: $cSalaryText.val(),
-    };
 
-    Customers.push(customer);
+let newCustomer = Object.assign({},customer);
+newCustomer.id = $cIdTxt.val();
+newCustomer.name = $cNameTxt.val();
+newCustomer.address = $cAddressTxt.val();
+newCustomer.salary = $cSalaryText.val();
+customers.push(newCustomer);
+    customers.push(customer);
     updateCustomerTable();
-    // hi
 });
 
 $tblCustomer.on("dblclick", "tr", function () {
@@ -86,7 +84,7 @@ $("#cUpdateBtn").click(() => {
 function updateCustomerTable() {
     $tblCustomer.empty();
 
-    Customers.forEach((customer) => {
+    customers.forEach((customer) => {
         $tblCustomer.append(`<tr><td>${customer.name}</td><td>${customer.id}</td><td>${customer.address}</td><td>${customer.salary}</td></tr>`);
     });
 

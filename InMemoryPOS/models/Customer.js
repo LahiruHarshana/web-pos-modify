@@ -1,6 +1,6 @@
-let item={
-    code:"",
-    description:"",
-    qtyOnHand:0,
-    unitPrice:0
+let customer={
+    id:"",
+    name:"",
+    address:"",
+    salary:""
 }
