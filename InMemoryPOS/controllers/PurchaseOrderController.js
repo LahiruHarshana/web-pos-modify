@@ -7,6 +7,7 @@ var Orders = [];
 
 $(document).ready(function () {
     $("#orderNav").click(function () {
+
         const customerFormVar = document.querySelector("#customerForm");
         const itemFormVar = document.querySelector("#itemForm");
         const orderrFormVar = document.querySelector("#orderForm");
@@ -15,11 +16,14 @@ $(document).ready(function () {
         const selectElement = $("#selectCustomerId");
         selectElement.children().remove();
 
-        for (let i = 0; i < Customers.length; i++) {
+        for (let i = 0; i < customers.length; i++) {
+            console.log(customers[i].name);
             const option = $("<option></option>");
-            option.val(Customers[i].id);
-            option.text(Customers[i].id);
+
+            option.val(customers[i].id);
+            option.text(customers[i].id);
             selectElement.append(option);
+
         }
 
         const selectItem = $("#oSelectItem");
@@ -44,12 +48,12 @@ $(document).ready(function () {
 
     $("#selectCustomerId").change(function () {
         const selectedValue = $(this).val();
-        for (let i = 0; i < Customers.length; i++) {
-            if (selectedValue === Customers[i].id) {
-                $("#oCName").val(Customers[i].name);
-                $("#CustomerIDORderForm").val(Customers[i].id);
-                $("#oCAddress").val(Customers[i].address);
-                $("#oCSalary").val(Customers[i].salary);
+        for (let i = 0; i < customers.length; i++) {
+            if (selectedValue === customers[i].id) {
+                $("#oCName").val(customers[i].name);
+                $("#CustomerIDORderForm").val(customers[i].id);
+                $("#oCAddress").val(customers[i].address);
+                $("#oCSalary").val(customers[i].salary);
 
             }
         }

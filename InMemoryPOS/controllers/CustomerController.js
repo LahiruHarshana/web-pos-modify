@@ -1,3 +1,6 @@
+// CustomerController.js
+const Customers = [];
+
 
 var customerFormVar =document.querySelector("#customerForm");
 var itemFormVar =document.querySelector("#itemForm");
@@ -50,7 +53,7 @@ newCustomer.name = $cNameTxt.val();
 newCustomer.address = $cAddressTxt.val();
 newCustomer.salary = $cSalaryText.val();
 customers.push(newCustomer);
-    customers.push(customer);
+    Customers.push(customer);
     updateCustomerTable();
 });
 
